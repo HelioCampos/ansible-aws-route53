@@ -1,12 +1,5 @@
 ---
 - hosts: localhost
-  connection: local
+  remote_user: root
   roles:
-    - { role: ansible-route53,
-      aws_route53_command: create,
-      aws_route53_zone: vivareal.info,
-      aws_route53_type: CNAME,
-      aws_route53_record: ansible.vivareal.info ,
-      aws_route53_value: vivareal.com.br,
-      aws_route53_overwrite: True
-    }
+    - ansible-aws-route53
