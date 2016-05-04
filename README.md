@@ -1,4 +1,4 @@
-AWS route53 [![Circle CI](https://circleci.com/gh/VivaReal/ansible-aws-route53/tree/master.svg?style=svg)](https://circleci.com/gh/VivaReal/ansible-aws-route53/tree/master)
+AWS route53 [![Circle CI](https://circleci.com/gh/VivaReal/ansible-aws-route53.svg?style=svg&circle-token=aa613e01df2f966c73576c70aa9b26052a641e2f)](https://circleci.com/gh/VivaReal/ansible-aws-route53)
 ========= 
 
 Manage AWS route53.
