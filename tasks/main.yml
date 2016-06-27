@@ -1,11 +1,11 @@
 ---
 - name: Create/update A DNS record
   route53:
-      command: "{{ aws_route53_command }}"
+      command: "{{ aws_route53_command | default('create') }}"
       zone: "{{ aws_route53_zone }}"
       record: "{{ aws_route53_record }}"
       ttl: "{{ aws_route53_ttl | default('60') }}"
       type: "{{ aws_route53_type | default('A') }}"
       value: "{{ aws_route53_value }}"
-      overwrite: "{{ aws_route53_overwrite | default(omit) }}"
+      overwrite: "{{ aws_route53_overwrite | default(true) }}"
       weight: "{{ aws_route53_weight | default(omit) }}"

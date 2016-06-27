@@ -14,13 +14,13 @@ Role Variables
 
 | parameter             | required | default | choices | comments |
 | --------------------- | -------- | ------- | -------- |-------- |
-| aws_route53_command | yes| | |  |
+| aws_route53_command | no | create | |  |
 | aws_route53_zone| yes| | |  |
 | aws_route53_record| yes| | |  |
-| aws_route53_ttl| yes| | |  | 
-| aws_route53_type| yes| | |  |
+| aws_route53_ttl| no| 60 | |  | 
+| aws_route53_type| no| A  | |  |
 | aws_route53_value| yes| | |  |
-| aws_route53_overwrite| yes| | |  |
+| aws_route53_overwrite| no | true | |  |
 | aws_route53_weight | yes| | |  |
 
 Ansible modules
@@ -39,12 +39,10 @@ Example Playbook
       connection: local
       roles:
         - { role: VivaReal.aws-route53,
-          aws_route53_command: create,
           aws_route53_zone: vivareal.info,
           aws_route53_type: CNAME,
           aws_route53_record: ansible.vivareal.info ,
           aws_route53_value: vivareal.com.br,
-          aws_route53_overwrite: True
         }
    
 
